@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digitalfluss</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <img src="Logo.png" alt="Digitalfluss Logo" class="hero-logo">
+      <h1>Willkommen bei Digitalfluss</h1>
+      <p>Automatisierung. Klar. Verständlich. Für dein Business.</p>
+    </div>
+  </header>
+
+  <nav class="sticky-nav">
+    <ul>
+      <li><a href="#warum">Warum</a></li>
+      <li><a href="#ablauf">Ablauf</a></li>
+      <li><a href="#ueberuns">Über uns</a></li>
+      <li><a href="kundenrechner.html">Kundenrechner</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <section class="benefits-section" id="warum">
+    <div class="container">
+      <h2>Warum Digitalfluss?</h2>
+      <p class="benefits-subtext">Automatisierung einfach und verständlich – maßgeschneidert für kleine Unternehmen.</p>
+      <div class="benefits">
+        <div class="benefit fade-in">
+          <img src="image_idiviworkflows.png" alt="Workflow Icon">
+          <h3>Individuelle Workflows</h3>
+          <p>Deine Prozesse – deine Regeln. Wir entwickeln deine Lösung.</p>
+        </div>
+        <div class="benefit fade-in">
+          <img src="image_echteautomatisierung.png" alt="Automatisierung Icon">
+          <h3>Echte Automatisierung</h3>
+          <p>Weniger Klicks, weniger Fehler, mehr Zeit fürs Wesentliche.</p>
+        </div>
+        <div class="benefit fade-in">
+          <img src="image_persoenlicheberatung.png" alt="Begleitung Icon">
+          <h3>Persönliche Begleitung</h3>
+          <p>Wir begleiten dich Schritt für Schritt – ehrlich und verständlich.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <div class="container">
+      <h2>Das sagen unsere Kunden</h2>
+      <div class="testimonial-wrapper">
+        <button class="testimonial-arrow left" onclick="prevTestimonial()">&#8592;</button>
+        <div class="testimonial-cards">
+          <div class="testimonial-card" id="testimonial-0"></div>
+          <div class="testimonial-card" id="testimonial-1"></div>
+          <div class="testimonial-card" id="testimonial-2"></div>
+        </div>
+        <button class="testimonial-arrow right" onclick="nextTestimonial()">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const testimonials = [
+      { text: "Digitalfluss hat unseren Alltag enorm erleichtert. Wir sparen monatlich mehrere Stunden – einfach top!", stars: 5, name: "Sven M." },
+      { text: "Dank der individuellen Beratung konnten wir unsere Prozesse deutlich effizienter gestalten.", stars: 5, name: "Laura B." },
+      { text: "Ich war anfangs skeptisch, aber das Team von Digitalfluss hat mich absolut überzeugt!", stars: 4, name: "Tobias R." },
+      { text: "Klare Empfehlung: Schnell, kompetent und verständlich – so sollte Automatisierung sein.", stars: 5, name: "Julia K." },
+      { text: "Sehr zufrieden! Ich habe mehr Zeit für meine eigentlichen Aufgaben – danke an das Team!", stars: 5, name: "Sebastian H." },
+      { text: "Top Service und super einfache Umsetzung. So macht Automatisierung Spaß!", stars: 4, name: "Franziska L." }
+    ];
+
+    let currentIndex = 0;
+
+    function renderTestimonials() {
+      for (let i = 0; i < 3; i++) {
+        const index = (currentIndex + i) % testimonials.length;
+        const t = testimonials[index];
+        const card = document.getElementById(`testimonial-${i}`);
+        card.innerHTML = `
+          <p class="testimonial-text">${t.text}</p>
+          <div class="testimonial-stars">${'⭐'.repeat(t.stars)}</div>
+          <div class="testimonial-author">– ${t.name}</div>
+        `;
+      }
+    }
+
+    function nextTestimonial() {
+      currentIndex = (currentIndex + 1) % testimonials.length;
+      renderTestimonials();
+    }
+
+    function prevTestimonial() {
+      currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+      renderTestimonials();
+    }
+
+    renderTestimonials();
+  </script>
+
+  <section class="steps" id="ablauf">
+    <div class="container">
+      <h2>So funktioniert Digitalfluss</h2>
+      <div class="step-boxes">
+        <div class="step">
+          <h3>1. Analyse deiner Abläufe</h3>
+          <p>Du zeigst uns, wie dein Alltag aussieht – wir finden die Zeitfresser.</p>
+        </div>
+        <div class="step">
+          <h3>2. Konzept & Umsetzung</h3>
+          <p>Wir bauen dir den passenden Workflow mit den richtigen Tools.</p>
+        </div>
+        <div class="step">
+          <h3>3. Einarbeitung & Support</h3>
+          <p>Du bekommst eine Einführung – einfach erklärt. Bei Fragen sind wir für dich da.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="ueberuns">
+    <div class="container">
+      <h2>Wer steckt hinter Digitalfluss?</h2>
+      <h3>Zwei Gründer. Ein Ziel.</h3>
+      <p>Hinter Digitalfluss stehen zwei Gründer mit unterschiedlichen Hintergründen und einer gemeinsamen Vision: <strong>Unternehmensprozesse zu vereinfachen.</strong></p>
+      <p>Während der eine Gründer aus dem <strong>Bankensektor</strong> stammt und auf <strong>strukturierte Beratung und Prozessoptimierung</strong> spezialisiert ist, bringt der andere die <strong>Erfahrung aus der Selbstständigkeit</strong> mit.</p>
+      <p>Gemeinsam verbinden sie <strong>Know-how und Praxis</strong>, um kleine Unternehmen durch smarte Automatisierung <strong>effizienter, zeitsparender und zukunftsfähig</strong> zu machen – verständlich und ohne unnötige Komplexität.</p>
+      <img src="gruender.png" alt="Gründer Bild">
+    </div>
+  </section>
+
+  <section class="contact-section" id="kontakt">
+    <div class="container">
+      <h2>Kontaktiere uns</h2>
+      <p class="contact-subtext">Schreib uns – wir melden uns schnellstmöglich zurück.</p>
+      <form class="contact-form" action="https://formspree.io/f/xwpbgavn" method="POST">
+        <label>Dein Name
+          <input type="text" name="name" placeholder="Max Mustermann" required>
+        </label>
+        <label>Deine E-Mail
+          <input type="email" name="email" placeholder="max@beispiel.de" required>
+        </label>
+        <label>Deine Nachricht
+          <textarea name="message" placeholder="Schreibe uns hier deine Nachricht…" rows="5" required></textarea>
+        </label>
+        <input type="hidden" name="_next" value="https://deine-domain.de/danke.html">
+        <button type="submit" class="btn-submit">Absenden</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-icons">
+      <a href="https://www.instagram.com/digitalfluss_de/?next=%2F" target="_blank">
+        <img src="instagram.png" alt="Instagram" class="footer-icon">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61577664909287" target="_blank">
+        <img src="facebook.png" alt="Facebook" class="footer-icon">
+      </a>
+      <a href="https://www.linkedin.com/in/digitalfluss-de-189b30371/" target="_blank">
+        <img src="linkedin.png" alt="LinkedIn" class="footer-icon">
+      </a>
+    </div>
+
+    <div class="footer-links">
+      <a href="#">Impressum</a> |
+      <a href="#">Datenschutz</a> |
+      <a href="#">AGB</a>
+    </div>
+
+    <p class="footer-copy">© 2025 Digitalfluss. Alle Rechte vorbehalten.</p>
+  </footer>
+
+</body>
+</html>

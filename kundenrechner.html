@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kundenrechner – Digitalfluss</title>
+  <link rel="stylesheet" href="kundenrechner.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <a href="index.html"><img src="Logo.png" alt="Digitalfluss Logo" class="nav-logo"></a>
+    <ul class="nav-links">
+      <li><a href="index.html#warum">Warum</a></li>
+      <li><a href="index.html#ablauf">Ablauf</a></li>
+      <li><a href="index.html#ueberuns">Über uns</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+      <li><a href="kundenrechner.html" class="active">Kundenrechner</a></li>
+    </ul>
+  </nav>
+
+  <section class="calculator-section">
+    <h1>Kundenrechner</h1>
+    <p class="calculator-subtext">
+      Entdecke dein Sparpotenzial durch Automatisierung – spare Zeit, Kosten und steigere gleichzeitig Effizienz und Gewinn.
+    </p>
+
+    <div class="calculator-intro">
+      <p>Bist du unsicher, ob sich die Automatisierung deiner Abläufe lohnt? <br>
+      Mit unserem ROI-Rechner findest du es ganz einfach heraus:</p>
+      <ul>
+        <li>✅ Berechne mögliche <strong>Zeit- und Kostenersparnisse</strong>.</li>
+        <li>✅ Sieh auf einen Blick, wann sich die Investition rechnet.</li>
+        <li>✅ Triff fundierte Entscheidungen für dein Business.</li>
+      </ul>
+      <p>Einfach Werte eingeben und den Button klicken – wir zeigen dir schwarz auf weiß, was möglich ist.</p>
+    </div>
+
+    <div class="calculator-container">
+      <h2>Dein persönlicher ROI-Rechner</h2>
+      <p class="calculator-description">
+        Berechne mit wenigen Klicks, wie viel du durch smarte Prozessoptimierung jedes Jahr sparen könntest.
+      </p>
+
+      <div class="calculator-inputs">
+        <label>⏱️ Zeitaufwand pro Monat (Stunden):<br>
+          <input id="stunden" type="number" value="20">
+        </label>
+
+        <label>💶 Interner Stundensatz (€):<br>
+          <input id="satz" type="number" value="80">
+        </label>
+
+        <label>🛠️ Toolkosten pro Monat (€):<br>
+          <input id="tools" type="number" value="150">
+        </label>
+
+        <label>📦 Einmalige Projektkosten (€):<br>
+          <input id="projekt" type="number" value="3000">
+        </label>
+
+        <label>🔁 Monatliches Abo (€):<br>
+          <input id="abo" type="number" value="200">
+        </label>
+
+        <button onclick="berechneROI()">🔍 Jetzt berechnen</button>
+      </div>
+
+      <p id="ausgabe" class="calculator-output"></p>
+    </div>
+  </section>
+
+  <script>
+    function berechneROI() {
+      const h = +document.getElementById("stunden").value;
+      const s = +document.getElementById("satz").value;
+      const t = +document.getElementById("tools").value;
+      const p = +document.getElementById("projekt").value;
+      const a = +document.getElementById("abo").value;
+
+      const jahreswert = h * s * 12;
+      const toolkosten = t * 12;
+      const einsparung = jahreswert - toolkosten;
+      const gesamtkosten = p + (a * 12);
+      const roi = einsparung - gesamtkosten;
+      const roiprozent = Math.round((roi / gesamtkosten) * 100);
+
+      document.getElementById("ausgabe").innerHTML =
+        `💸 <strong>Ihre jährliche Einsparung:</strong> ${einsparung.toLocaleString()} €<br>
+         📈 <strong>Ihr ROI:</strong> ${roi.toLocaleString()} € (${roiprozent}% Gewinn)`;
+    }
+  </script>
+<footer class="footer">
+  <div class="footer-icons">
+    <a href="https://www.instagram.com/digitalfluss_de/?next=%2F" target="_blank">
+      <img src="instagram.png" alt="Instagram" class="footer-icon">
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61577664909287" target="_blank">
+      <img src="facebook.png" alt="Facebook" class="footer-icon">
+    </a>
+    <a href="https://www.linkedin.com/in/digitalfluss-de-189b30371/" target="_blank">
+      <img src="linkedin.png" alt="LinkedIn" class="footer-icon">
+    </a>
+  </div>
+
+  <div class="footer-links">
+    <a href="#">Impressum</a> |
+    <a href="#">Datenschutz</a> |
+    <a href="#">AGB</a>
+  </div>
+
+  <p class="footer-copy">© 2025 Digitalfluss. Alle Rechte vorbehalten.</p>
+</footer>
+
+</body>
+</html>

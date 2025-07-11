@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digitalfluss</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER BEREICH -->
+  <header class="hero">
+    <div class="container">
+      <img src="Logo.png" alt="Digitalfluss Logo" class="hero-logo">
+      <h1>Willkommen bei Digitalfluss</h1>
+      <p>Automatisierung. Klar. Verständlich. Für dein Business.</p>
+    </div>
+  </header>
+
+  <!-- STICKY NAVIGATION -->
+  <nav class="sticky-nav">
+    <ul>
+      <li><a href="#warum">Warum</a></li>
+      <li><a href="#ablauf">Ablauf</a></li>
+      <li><a href="#ueberuns">Über uns</a></li>
+      <li><a href="kundenrechner.html">Kundenrechner</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- Deine bestehenden Abschnitte bleiben unverändert -->
+
+  <!-- KONTAKT -->
+  <section class="contact-section" id="kontakt">
+    <div class="container">
+      <h2>Kontaktiere uns</h2>
+      <p class="contact-subtext">Schreib uns – wir melden uns schnellstmöglich zurück.</p>
+      <form class="contact-form" action="https://formspree.io/f/DEIN_FORM_ID" method="POST">
+        <label>Dein Name
+          <input type="text" name="name" placeholder="Max Mustermann" required>
+        </label>
+        <label>Deine E-Mail
+          <input type="email" name="email" placeholder="max@beispiel.de" required>
+        </label>
+        <label>Deine Nachricht
+          <textarea name="message" placeholder="Schreibe uns hier deine Nachricht…" rows="5" required></textarea>
+        </label>
+        <input type="hidden" name="_next" value="https://deine-domain.de/danke.html">
+        <button type="submit" class="btn-submit">Absenden</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-icons">
+      <a href="https://www.instagram.com/digitalfluss_de/?next=%2F" target="_blank">
+        <img src="instagram.png" alt="Instagram" class="footer-icon">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61577664909287" target="_blank">
+        <img src="facebook.png" alt="Facebook" class="footer-icon">
+      </a>
+      <a href="https://www.linkedin.com/in/digitalfluss-de-189b30371/" target="_blank">
+        <img src="linkedin.png" alt="LinkedIn" class="footer-icon">
+      </a>
+    </div>
+
+    <div class="footer-links">
+      <a href="#">Impressum</a> |
+      <a href="#">Datenschutz</a> |
+      <a href="#">AGB</a>
+    </div>
+
+    <p class="footer-copy">© 2025 Digitalfluss. Alle Rechte vorbehalten.</p>
+  </footer>
+
+</body>
+</html>
