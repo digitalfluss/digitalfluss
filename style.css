@@ -237,9 +237,10 @@ section {
 }
 
 .benefits {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -252,6 +253,9 @@ section {
   text-align: center;
   transition: all var(--transition-normal);
   border: 1px solid var(--gray-200);
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
 }
 
 .benefit:hover {
