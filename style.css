@@ -426,3 +426,188 @@ p{
     padding: 10px 10px;
   }
 }
+/* =========================================================
+   DIGITALFLUSS – FEINSCHLIFF (unten an style.css anhängen)
+   - Header/Logo professionell
+   - Navigation moderner
+   - CTA sauber
+   - Spacing & Cards Feintuning
+   - Legal-Seiten besser lesbar
+   ========================================================= */
+
+/* ---------- Logo & Hero ---------- */
+.hero {
+  padding: 62px 0 34px;
+}
+
+.hero-logo{
+  width: 170px;            /* anpassen: 150–190 je nach Logoform */
+  max-width: 70vw;
+  height: auto;
+  margin-bottom: 18px;
+  filter: none !important; /* falls irgendwo noch ein Filter greift */
+}
+
+.hero h1{
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.12;
+}
+
+.hero p{
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 17px;
+}
+
+/* Optional: Button im Hero (falls du ihn einfügst) */
+.hero .btn-submit{
+  margin-top: 18px;
+  display: inline-flex;
+}
+
+/* ---------- Sticky Nav: hochwertiger, klarer ---------- */
+.sticky-nav{
+  border-bottom: 1px solid rgba(17,24,39,0.10);
+}
+
+.sticky-nav ul{
+  padding: 12px 0;
+  gap: 8px;
+}
+
+.sticky-nav a{
+  padding: 10px 14px;
+  border: 1px solid transparent;
+}
+
+.sticky-nav a:hover{
+  background: rgba(11,94,215,0.08);
+  border-color: rgba(11,94,215,0.18);
+}
+
+/* Optional: aktiver Link (wenn du später JS/Classes nutzt) */
+.sticky-nav a.active{
+  background: rgba(11,94,215,0.10);
+  border-color: rgba(11,94,215,0.22);
+  color: var(--blue);
+}
+
+/* ---------- Sections: spacing & Lesbarkeit ---------- */
+section{
+  padding: 64px 0;
+}
+
+@media (max-width: 560px){
+  section{
+    padding: 46px 0;
+  }
+}
+
+/* Überschriften etwas edler */
+h2{
+  margin-bottom: 14px;
+}
+
+.benefits-subtext,
+.contact-subtext{
+  margin-top: 6px;
+  margin-bottom: 18px;
+  line-height: 1.65;
+}
+
+/* ---------- Cards: Benefit / Step / Testimonials etwas „crisper“ ---------- */
+.benefit,
+.step,
+.testimonial-card,
+.contact-section .contact-form{
+  border-color: rgba(17,24,39,0.10);
+}
+
+.benefit:hover,
+.step:hover{
+  transform: translateY(-4px);
+}
+
+/* ---------- Testimonials: Pfeile minimal cleaner ---------- */
+.testimonial-arrow{
+  border-color: rgba(17,24,39,0.12);
+}
+
+.testimonial-arrow:hover{
+  background: rgba(11,94,215,0.08);
+}
+
+/* ---------- Contact: Form-Header klarer ---------- */
+.contact-section h2{
+  margin-bottom: 10px;
+}
+
+.contact-section .contact-form{
+  padding: 20px;
+}
+
+/* ---------- Footer: Linktext etwas ruhiger ---------- */
+.footer-links{
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.footer-links a{
+  opacity: 0.92;
+}
+
+.footer-links a:hover{
+  opacity: 1;
+}
+
+/* ---------- Legal-Seiten (Impressum/Datenschutz/Hinweise): bessere Lesbarkeit ---------- */
+/* Wir nutzen deine bestehende benefits-section/ container Struktur.
+   Das hier sorgt dafür, dass lange Texte nicht „zu breit“ laufen. */
+
+#legal .container{
+  max-width: 860px;
+}
+
+#legal h2{
+  margin-top: 26px;
+}
+
+#legal h2:first-child{
+  margin-top: 0;
+}
+
+#legal p{
+  color: rgba(17,24,39,0.92);
+  line-height: 1.75;
+}
+
+#legal a{
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+#legal a:hover{
+  text-decoration: underline;
+}
+
+/* ---------- Mobile: Nav nicht zu gequetscht ---------- */
+@media (max-width: 560px){
+  .sticky-nav ul{
+    justify-content: center;
+    padding: 10px 8px;
+  }
+
+  .hero-logo{
+    width: 150px;
+  }
+}
+
+/* =========================================================
+   OPTIONAL (wenn du einen Hero-Button willst):
+   Füge in index.html nach dem Hero-Text ein:
+   <a href="#kontakt" class="btn-submit">Kostenlose Erstberatung</a>
+   ========================================================= */
