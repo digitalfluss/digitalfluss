@@ -611,3 +611,100 @@ h2{
    Füge in index.html nach dem Hero-Text ein:
    <a href="#kontakt" class="btn-submit">Kostenlose Erstberatung</a>
    ========================================================= */
+/* =========================================================
+   DIGITALFLUSS – PDF-SECTIONS (für index.html Ergänzungen)
+   Passt sich an deine vorhandenen Farben/Variablen an
+   ========================================================= */
+
+.pdf-section{
+  padding: 64px 0;
+}
+
+.pdf-section .container{
+  max-width: var(--container);
+}
+
+/* Subline / Text unter Überschrift */
+.pdf-subtext{
+  color: var(--muted);
+  max-width: 900px;
+  line-height: 1.65;
+  margin: 6px 0 14px;
+}
+
+.pdf-text{
+  max-width: 900px;
+  color: rgba(17,24,39,0.92);
+  margin-bottom: 14px;
+}
+
+/* Tool Badges */
+.tool-badges{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tool-badges span{
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(11,94,215,0.08);
+  border: 1px solid rgba(11,94,215,0.16);
+  color: var(--blue);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* Cards Grid (Leistungen / Vorteile) */
+.pdf-cards{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.pdf-cards-4{
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Card Look (wie benefit/step/testimonial – nur leicht angepasst) */
+.pdf-card{
+  background: #fff;
+  border: 1px solid rgba(17,24,39,0.10);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.pdf-card:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.pdf-card h3{
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.pdf-card p{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Auf Mobile/Tablet sauber umbrechen */
+@media (max-width: 980px){
+  .pdf-cards{
+    grid-template-columns: 1fr;
+  }
+  .pdf-cards-4{
+    grid-template-columns: 1fr;
+  }
+  .tool-badges{
+    gap: 8px;
+  }
+}
