@@ -1060,3 +1060,35 @@ h2::before{
   background: rgba(11,94,215,0.10);
   color: var(--blue);
 }
+/* =========================================================
+   HEADER -> NAV FLOW: Header so anpassen, dass er in die Nav fließt
+   ========================================================= */
+
+/* 1) Header oben ruhiger (kein "Start von vorne") */
+.hero::before{
+  inset: -220px -120px auto -120px !important;  /* weiter nach oben ziehen */
+  height: 520px !important;                     /* größer + weicher */
+  opacity: 0.65 !important;                     /* weniger hart */
+  filter: blur(28px) !important;
+}
+
+/* 2) Extra "Bottom Glow" im Header, der Richtung Nav stärker wird */
+.hero::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-1px;
+  height: 180px;
+  pointer-events:none;
+  background:
+    radial-gradient(900px 260px at 15% 120%, rgba(47,179,68,0.20), transparent 62%),
+    radial-gradient(900px 260px at 85% 120%, rgba(11,94,215,0.16), transparent 62%),
+    radial-gradient(900px 320px at 50% 130%, rgba(247,103,7,0.12), transparent 70%);
+  opacity: 0.95;
+}
+
+/* 3) Nav minimal "einbetten" (nur falls noch zu getrennt wirkt) */
+.sticky-nav{
+  border-top: 1px solid rgba(255,255,255,0.35) !important;
+}
