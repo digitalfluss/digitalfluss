@@ -952,3 +952,24 @@ h2::before{
   width: 0 !important;
   background: none !important;
 }
+/* =========================================================
+   FLOW FIX: Gradient von Header -> Warum -> Wer wir sind
+   ========================================================= */
+
+/* 1) Warum: Gradient soll UNTEN anfangen (oben fast neutral) */
+#warum{
+  background:
+    radial-gradient(1200px 420px at 50% 100%, rgba(47,179,68,0.14), transparent 65%),
+    radial-gradient(1200px 420px at 85% 100%, rgba(11,94,215,0.12), transparent 65%),
+    radial-gradient(1200px 520px at 15% 100%, rgba(247,103,7,0.08), transparent 70%),
+    transparent !important;
+  border-top: none; /* optional: falls du oben eine Kante siehst */
+}
+
+/* 2) Wer wir sind: oben leicht aufnehmen, damit der Übergang wirkt */
+#wer-wir-sind{
+  background:
+    radial-gradient(1200px 420px at 50% 0%, rgba(47,179,68,0.10), transparent 60%),
+    radial-gradient(1200px 420px at 85% 0%, rgba(11,94,215,0.08), transparent 60%),
+    var(--bg-soft) !important;
+}
