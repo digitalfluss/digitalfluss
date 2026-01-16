@@ -973,3 +973,63 @@ h2::before{
     radial-gradient(1200px 420px at 85% 0%, rgba(11,94,215,0.08), transparent 60%),
     var(--bg-soft) !important;
 }
+/* =========================================================
+   FLOW FIX v2 – Verlauf soll in #warum U N T E N starten
+   (oben neutral, unten farbig -> Übergang zu #wer-wir-sind)
+   ========================================================= */
+
+/* 1) #warum oben neutral machen (Body-Gradient dort "ausblenden") */
+#warum{
+  background: var(--bg) !important;
+}
+
+/* 2) Verlauf NUR unten reinlegen (Pseudo-Overlay) */
+#warum::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-1px;
+  height: 180px;                 /* Höhe des "Bottom-Gradients" */
+  pointer-events:none;
+  background:
+    radial-gradient(900px 260px at 15% 110%, rgba(47,179,68,0.22), transparent 62%),
+    radial-gradient(900px 260px at 85% 110%, rgba(11,94,215,0.18), transparent 62%),
+    radial-gradient(900px 320px at 50% 120%, rgba(247,103,7,0.14), transparent 68%);
+}
+
+/* 3) Damit der Overlay hinter Content bleibt */
+#warum{
+  position: relative;
+  overflow: hidden;
+}
+#warum .container{
+  position: relative;
+  z-index: 1;
+}
+
+/* 4) #wer-wir-sind: oben den Anschluss schaffen */
+#wer-wir-sind{
+  background: var(--bg-soft) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+#wer-wir-sind::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:-1px;
+  height: 140px;
+  pointer-events:none;
+  background:
+    radial-gradient(900px 240px at 15% -10%, rgba(47,179,68,0.12), transparent 62%),
+    radial-gradient(900px 240px at 85% -10%, rgba(11,94,215,0.10), transparent 62%),
+    radial-gradient(900px 260px at 50% -20%, rgba(247,103,7,0.08), transparent 68%);
+}
+
+/* 5) Optional: Trenner-Linie zwischen den beiden Sections entfernen */
+#wer-wir-sind::before{
+  display:none !important;
+}
