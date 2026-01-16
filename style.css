@@ -1033,3 +1033,30 @@ h2::before{
 #wer-wir-sind::before{
   display:none !important;
 }
+/* =========================================================
+   NAV FLOW – Navigation in den Farbverlauf einbetten
+   ========================================================= */
+
+.sticky-nav{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(47,179,68,0.08),
+      rgba(11,94,215,0.08),
+      rgba(247,103,7,0.06)
+    );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(17,24,39,0.08);
+}
+
+/* Nav-Links etwas kontrastreicher */
+.sticky-nav a{
+  color: rgba(17,24,39,0.9);
+}
+
+/* Hover bleibt clean, aber leicht farbig */
+.sticky-nav a:hover{
+  background: rgba(11,94,215,0.10);
+  color: var(--blue);
+}
