@@ -926,3 +926,10 @@ section:nth-of-type(even){
     max-width: 300px;
   }
 }
+/* =========================================================
+   CLEANUP: Überschriften-Unterstriche entfernen
+   ========================================================= */
+
+h2::after{
+  display: none !important;
+}
