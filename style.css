@@ -933,3 +933,22 @@ section:nth-of-type(even){
 h2::after{
   display: none !important;
 }
+/* =========================================================
+   KILL SWITCH: Entfernt ALLE Unterstriche/Lines unter H2
+   (Pseudo-Elemente + Border + Background)
+   ========================================================= */
+
+h2{
+  border-bottom: none !important;
+  background-image: none !important;
+  text-decoration: none !important;
+}
+
+h2::after,
+h2::before{
+  content: none !important;
+  display: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  background: none !important;
+}
