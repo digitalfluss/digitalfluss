@@ -1092,3 +1092,58 @@ h2::before{
 .sticky-nav{
   border-top: 1px solid rgba(255,255,255,0.35) !important;
 }
+/* =========================================================
+   TRUE FLOW FIX: Header + Nav = ein durchgehender Verlauf
+   - Nav bekommt KEIN eigenen Verlauf mehr
+   - Nav ist Glas/transparent und übernimmt den Hero-Background
+   ========================================================= */
+
+/* 1) Nav transparent machen (kein eigener Gradient mehr) */
+.sticky-nav{
+  background: rgba(255,255,255,0.10) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(17,24,39,0.08) !important;
+}
+
+/* 2) (Optional) Hover bleibt sauber */
+.sticky-nav a:hover{
+  background: rgba(11,94,215,0.10);
+}
+
+/* 3) Hero-Verlauf nach unten verlängern, damit er UNTER die Nav läuft */
+.hero{
+  padding-bottom: 56px !important;
+  position: relative;
+  overflow: visible !important;
+}
+
+.hero::before{
+  inset: -240px -140px auto -140px !important;
+  height: 700px !important;   /* Verlängert den Verlauf */
+  opacity: 0.75 !important;
+  filter: blur(30px) !important;
+}
+
+/* 4) Extra Bottom-Glow, der bis unter die Nav wirkt */
+.hero::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-140px;              /* << zieht Glow unter die Nav */
+  height: 260px;
+  pointer-events:none;
+  background:
+    radial-gradient(1000px 280px at 15% 120%, rgba(47,179,68,0.22), transparent 62%),
+    radial-gradient(1000px 280px at 85% 120%, rgba(11,94,215,0.18), transparent 62%),
+    radial-gradient(1000px 340px at 50% 130%, rgba(247,103,7,0.14), transparent 70%);
+  opacity: 1;
+}
+
+/* 5) Damit die Nav sicher über dem Hero sitzt */
+.sticky-nav{
+  position: sticky;
+  top: 0;
+  z-index: 80;
+}
